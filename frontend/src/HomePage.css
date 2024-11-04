@@ -1,0 +1,20 @@
+/* Style for the background image */
+/* Style for the background image */
+.background {
+  background-image: url('./assets/anime-night-sky-illustration.jpg'); /* Use your background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed during scroll */
+  min-height: 100vh; /* Ensure the background covers the full viewport initially */
+}
+
+  
+  /* Content container styles */
+  .content {
+    padding-top: 40px; /* Adjust the padding to move the content down slightly */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 800px; /* Optional: limit the width of the content for better readability */
+  }
+  
