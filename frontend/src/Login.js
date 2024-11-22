@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -10,9 +10,6 @@ import Register from "./Register";
 import axios from "axios";
 
 const Login = ({ open, handleClose, setUsername }) => {
-  // State to store username and password
-  //const [username, setLocalUsername] = useState("");
-  //const [password, setPassword] = useState("");
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [studentDetails, setStudentDetails] = useState({
     firstName: "",
@@ -44,7 +41,8 @@ const Login = ({ open, handleClose, setUsername }) => {
     try {
       const response = await axios.post(
         "http://localhost:8080/api/students/login",
-        studentDetails
+        studentDetails,
+        { withCredentials: true }
       );
       const userData = response.data;
       console.log(userData);
@@ -64,6 +62,18 @@ const Login = ({ open, handleClose, setUsername }) => {
       console.log("Error retrieving login details :", error);
     }
   };
+
+  useEffect(() => {
+    if (open) {
+      setStudentDetails({
+        firstName: "",
+        lastName: "",
+        gid: "",
+        email: "",
+        password: "",
+      });
+    }
+  }, [open]);
 
   return (
     <Dialog open={open} onClose={handleClose}>

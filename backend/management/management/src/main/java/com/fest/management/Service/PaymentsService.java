@@ -2,7 +2,7 @@ package com.fest.management.Service;
 
 
 import com.fest.management.Entity.Payments;
-import com.fest.management.repository.PaymentsRepository;
+import com.fest.management.Repository.PaymentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;

@@ -1,12 +1,10 @@
-package com.fest.management.repository;
+package com.fest.management.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.fest.management.Entity.Student;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {

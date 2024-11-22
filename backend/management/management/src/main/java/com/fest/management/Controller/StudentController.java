@@ -18,8 +18,8 @@ import java.util.Map;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/students")
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
 
     @Autowired
@@ -32,17 +32,16 @@ public class StudentController {
     }
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> Login(@RequestBody Student student){
-        String isAuthenticated = studentService.authenticateStudent(student.getGid(), student.getPassword());
-        if(isAuthenticated != null){
+        try{
+            String isAuthenticated = studentService.authenticateStudent(student.getGid(), student.getPassword());
             System.out.println("Successfully Logged In");
-            //Student LoggedStudent = studentService.getStudentDetails(student.getGid());
             return ResponseEntity.ok(isAuthenticated);
-        }else{
+        }catch(IllegalArgumentException e){
             Map<String, String> errorResponse = new HashMap<>();
             errorResponse.put("error", "Invalid credentials");
             return ResponseEntity
                     .status(HttpStatus.UNAUTHORIZED)
-                    .body(errorResponse); // Ensure consistent response type
+                    .body(errorResponse);
         }
         }
     }

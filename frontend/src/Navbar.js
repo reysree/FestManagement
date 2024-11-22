@@ -45,7 +45,7 @@ const Navbar = ({ setUsername }) => {
         </IconButton>
 
         {/* Title of the Website */}
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Fest Management
         </Typography>
 

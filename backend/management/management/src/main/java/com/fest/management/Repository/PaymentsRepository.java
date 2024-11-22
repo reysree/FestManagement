@@ -1,4 +1,4 @@
-package com.fest.management.repository;
+package com.fest.management.Repository;
 
 
 import com.fest.management.Entity.Payments;

@@ -37,7 +37,7 @@ const sampleEvents = [
     type: "paid",
   },
   {
-    id: 5,
+    id: 6,
     image: require("./assets/standup-comedy.jpg"),
     name: "Stand-Up Comedy",
     type: "free",
@@ -45,15 +45,6 @@ const sampleEvents = [
 ];
 
 const HomePage = ({ username, addToCart }) => {
-  // State to handle cart actions
-  //const [cart, setCart] = useState([]);
-
-  // Function to handle adding an event to the cart
-  // const handleAddToCart = (eventName) => {
-  //   setCart([...cart, eventName]);
-  //   alert(`${eventName} added to cart!`);
-  // };
-
   return (
     <div className="background">
       <Container className="content" maxWidth="xl">

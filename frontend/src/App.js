@@ -3,6 +3,8 @@ import Payments from "./Payments";
 import { useState } from "react";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
   const [username, setUsername] = useState("");
